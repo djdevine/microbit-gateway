@@ -1,10 +1,17 @@
 import microbit
 import time
 
+from pynput.keyboard import Key, Controller
+
+keyboard = Controller()
+
 SEND_RATE = 1.0
 
 def process_incoming(msg):
     print("rx:%s" % str(msg))
+    if msg == 'A':
+        keyboard.press(Key.space)
+        keyboard.release(Key.space)
     #Add your incoming message processing here
     #any radio message sent by any microbit, will arrive here
 
@@ -26,8 +33,8 @@ while True:
     if msg is not None:
         process_incoming(msg)
 
-    now = time.time()
-    if now >= next_send:
-       next_send = now + SEND_RATE
-       process_outgoing(str(count))
-       count = (count + 1) % 10
+    #now = time.time()
+    #if now >= next_send:
+    #   next_send = now + SEND_RATE
+    #   process_outgoing(str(count))
+    #   count = (count + 1) % 10
