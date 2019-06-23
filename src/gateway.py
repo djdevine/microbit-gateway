@@ -9,9 +9,21 @@ SEND_RATE = 1.0
 
 def process_incoming(msg):
     print("rx:%s" % str(msg))
-    if msg == 'A':
+    if str(msg) == "MB1:A":
+        keyboard.press(Key.left)
+        time.sleep(0.2)
+        keyboard.release(Key.left)
+        print("left")
+    elif str(msg) == "MB1:B":
+        keyboard.press(Key.right)
+        time.sleep(0.2)
+        keyboard.release(Key.right)
+        print("right")
+    elif str(msg) == "MB1:S":
         keyboard.press(Key.space)
+        time.sleep(0.3)
         keyboard.release(Key.space)
+        print("space")
     #Add your incoming message processing here
     #any radio message sent by any microbit, will arrive here
 
