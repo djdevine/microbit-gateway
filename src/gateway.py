@@ -23,7 +23,7 @@ def process_incoming(msg):
         keyboard.press(Key.up)
         time.sleep(0.3)
         keyboard.release(Key.up)
-        print("space")
+        print("up")
     #Add your incoming message processing here
     #any radio message sent by any microbit, will arrive here
 
