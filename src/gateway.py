@@ -20,9 +20,9 @@ def process_incoming(msg):
         keyboard.release(Key.right)
         print("right")
     elif str(msg) == "MB1:S":
-        keyboard.press(Key.space)
+        keyboard.press(Key.up)
         time.sleep(0.3)
-        keyboard.release(Key.space)
+        keyboard.release(Key.up)
         print("space")
     #Add your incoming message processing here
     #any radio message sent by any microbit, will arrive here
